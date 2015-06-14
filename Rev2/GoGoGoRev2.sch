@@ -292,4 +292,22 @@ Wire Wire Line
 	4750 3000 4750 2900
 Wire Wire Line
 	4750 2900 3950 2900
+Text Label 4600 1900 0    60   ~ 0
+VCC
+Text Label 7100 2000 0    60   ~ 0
+VM
+Text Label 6950 3050 0    60   ~ 0
+O1
+Text Label 6950 3250 0    60   ~ 0
+O2
+Text Label 4400 2800 0    60   ~ 0
+STBY
+Text Label 4400 2900 0    60   ~ 0
+IN1
+Text Label 4400 3000 0    60   ~ 0
+IN2
+Text Label 4500 3450 0    60   ~ 0
+PWM
+Text Label 6850 3750 0    60   ~ 0
+PGND
 $EndSCHEMATC
