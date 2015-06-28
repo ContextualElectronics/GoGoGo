@@ -3,7 +3,7 @@
   (general
     (links 50)
     (no_connects 1)
-    (area 147.573999 81.025999 178.562001 128.790702)
+    (area 126.745999 81.025999 178.562001 104.902001)
     (thickness 1.6)
     (drawings 13)
     (tracks 269)
@@ -92,7 +92,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory Gerbers/))
+      (outputdirectory /home/chrisg/PCBs/GoGoGo/Combo_Gerbers/))
   )
 
   (net 0 "")
