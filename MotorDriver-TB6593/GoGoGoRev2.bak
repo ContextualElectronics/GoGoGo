@@ -52,6 +52,8 @@ F 0 "U1" H 6400 2100 60  0000 C CNN
 F 1 "TB6593FNG" H 5850 3400 60  0000 C CNN
 F 2 "SMD_Packages:SSOP-20" H 4800 3850 60  0001 C CNN
 F 3 "" H 4800 3850 60  0000 C CNN
+F 4 "TB6593FNG" H 5850 3250 60  0001 C CNN "MPN"
+F 5 "http://parts.io/detail/1775277/TB6593FNG" H 5850 3250 60  0001 C CNN "Link"
 	1    5850 3250
 	1    0    0    -1  
 $EndComp
@@ -292,4 +294,22 @@ Wire Wire Line
 	4750 3000 4750 2900
 Wire Wire Line
 	4750 2900 3950 2900
+Text Label 4600 1900 0    60   ~ 0
+VCC
+Text Label 7100 2000 0    60   ~ 0
+VM
+Text Label 6950 3050 0    60   ~ 0
+O1
+Text Label 6950 3250 0    60   ~ 0
+O2
+Text Label 4400 2800 0    60   ~ 0
+STBY
+Text Label 4400 2900 0    60   ~ 0
+IN1
+Text Label 4400 3000 0    60   ~ 0
+IN2
+Text Label 4500 3450 0    60   ~ 0
+PWM
+Text Label 6850 3750 0    60   ~ 0
+PGND
 $EndSCHEMATC
