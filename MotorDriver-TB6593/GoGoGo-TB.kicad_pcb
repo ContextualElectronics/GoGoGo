@@ -1,14 +1,14 @@
 (kicad_pcb (version 4) (host pcbnew 0.201509151501+6198~30~ubuntu14.04.1-product)
 
   (general
-    (links 42)
+    (links 132)
     (no_connects 0)
-    (area 151.333999 105.105999 176.834001 133.146001)
+    (area 150.669934 103.0431 179.054303 136.10966)
     (thickness 1.6)
     (drawings 8)
     (tracks 113)
     (zones 0)
-    (modules 21)
+    (modules 122)
     (nets 14)
   )
 
@@ -37,7 +37,7 @@
   )
 
   (setup
-    (last_trace_width 0.3048)
+    (last_trace_width 0.1524)
     (user_trace_width 0.3048)
     (user_trace_width 0.6096)
     (trace_clearance 0.1524)
@@ -60,8 +60,8 @@
     (mod_edge_width 0.15)
     (mod_text_size 0.5 0.5)
     (mod_text_width 0.1)
-    (pad_size 1.5 1.5)
-    (pad_drill 0.6)
+    (pad_size 0.6858 0.6858)
+    (pad_drill 0.3302)
     (pad_to_mask_clearance 0)
     (aux_axis_origin 0 0)
     (grid_origin 161.544 117.856)
@@ -130,6 +130,1206 @@
     (add_net "Net-(D4-Pad1)")
   )
 
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F1E5)
+    (at 160.147 132.461)
+    (fp_text reference REF**155134 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F1E1)
+    (at 158.877 132.461)
+    (fp_text reference REF**155124 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F1DD)
+    (at 157.607 132.461)
+    (fp_text reference REF**155114 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F1D9)
+    (at 160.147 131.191)
+    (fp_text reference REF**155133 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F1D5)
+    (at 158.877 131.191)
+    (fp_text reference REF**155123 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F1D1)
+    (at 157.607 131.191)
+    (fp_text reference REF**155113 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F1CD)
+    (at 160.147 129.921)
+    (fp_text reference REF**155132 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F1C9)
+    (at 158.877 129.921)
+    (fp_text reference REF**155122 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F1C5)
+    (at 157.607 129.921)
+    (fp_text reference REF**155112 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F1C1)
+    (at 160.147 128.651)
+    (fp_text reference REF**155131 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F1BD)
+    (at 158.877 128.651)
+    (fp_text reference REF**155121 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F144)
+    (at 157.607 128.651)
+    (fp_text reference REF**155111 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0D9)
+    (at 176.149 118.745)
+    (fp_text reference REF**1588 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0D5)
+    (at 173.609 118.745)
+    (fp_text reference REF**1578 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0D1)
+    (at 167.132 127.381)
+    (fp_text reference REF**1568 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0CD)
+    (at 167.132 131.064)
+    (fp_text reference REF**1558 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0C9)
+    (at 172.339 131.064)
+    (fp_text reference REF**1548 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0C5)
+    (at 171.069 131.064)
+    (fp_text reference REF**1538 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0C1)
+    (at 169.799 131.064)
+    (fp_text reference REF**1528 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0BD)
+    (at 168.529 131.064)
+    (fp_text reference REF**1518 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0B9)
+    (at 174.879 118.745)
+    (fp_text reference REF**1587 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0B5)
+    (at 167.132 125.984)
+    (fp_text reference REF**1577 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0B1)
+    (at 167.132 128.524)
+    (fp_text reference REF**1567 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0AD)
+    (at 167.132 129.794)
+    (fp_text reference REF**1557 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0A9)
+    (at 172.339 129.794)
+    (fp_text reference REF**1547 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0A5)
+    (at 171.069 129.794)
+    (fp_text reference REF**1537 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F0A1)
+    (at 169.799 129.794)
+    (fp_text reference REF**1527 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F09D)
+    (at 168.529 129.794)
+    (fp_text reference REF**1517 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F099)
+    (at 173.609 120.015)
+    (fp_text reference REF**1586 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F095)
+    (at 176.149 128.524)
+    (fp_text reference REF**1576 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F091)
+    (at 174.879 128.524)
+    (fp_text reference REF**1566 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F08D)
+    (at 173.609 128.524)
+    (fp_text reference REF**1556 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F089)
+    (at 172.339 128.524)
+    (fp_text reference REF**1546 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F085)
+    (at 171.069 128.524)
+    (fp_text reference REF**1536 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F081)
+    (at 169.799 128.524)
+    (fp_text reference REF**1526 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F07D)
+    (at 168.529 128.524)
+    (fp_text reference REF**1516 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F079)
+    (at 174.879 120.015)
+    (fp_text reference REF**1585 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F075)
+    (at 176.149 127.254)
+    (fp_text reference REF**1575 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F071)
+    (at 174.879 127.254)
+    (fp_text reference REF**1565 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F06D)
+    (at 173.609 127.254)
+    (fp_text reference REF**1555 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F069)
+    (at 172.339 127.254)
+    (fp_text reference REF**1545 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F065)
+    (at 171.069 127.254)
+    (fp_text reference REF**1535 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F061)
+    (at 169.799 127.254)
+    (fp_text reference REF**1525 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F05D)
+    (at 168.529 127.254)
+    (fp_text reference REF**1515 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F059)
+    (at 176.149 120.015)
+    (fp_text reference REF**1584 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F055)
+    (at 176.149 125.984)
+    (fp_text reference REF**1574 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F051)
+    (at 174.879 125.984)
+    (fp_text reference REF**1564 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F04D)
+    (at 173.609 125.984)
+    (fp_text reference REF**1554 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F049)
+    (at 172.339 125.984)
+    (fp_text reference REF**1544 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F045)
+    (at 171.069 125.984)
+    (fp_text reference REF**1534 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F041)
+    (at 169.799 125.984)
+    (fp_text reference REF**1524 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F03D)
+    (at 168.529 125.984)
+    (fp_text reference REF**1514 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F039)
+    (at 176.149 121.158)
+    (fp_text reference REF**1583 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F035)
+    (at 176.149 124.714)
+    (fp_text reference REF**1573 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F031)
+    (at 174.879 124.714)
+    (fp_text reference REF**1563 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F02D)
+    (at 173.609 124.714)
+    (fp_text reference REF**1553 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F029)
+    (at 172.339 124.714)
+    (fp_text reference REF**1543 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F025)
+    (at 171.069 124.714)
+    (fp_text reference REF**1533 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F021)
+    (at 169.799 124.714)
+    (fp_text reference REF**1523 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F01D)
+    (at 168.529 124.714)
+    (fp_text reference REF**1513 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F019)
+    (at 174.879 121.031)
+    (fp_text reference REF**1582 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F015)
+    (at 176.149 123.444)
+    (fp_text reference REF**1572 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F011)
+    (at 174.879 123.444)
+    (fp_text reference REF**1562 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F00D)
+    (at 173.609 123.444)
+    (fp_text reference REF**1552 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F009)
+    (at 172.339 123.444)
+    (fp_text reference REF**1542 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F005)
+    (at 171.069 123.444)
+    (fp_text reference REF**1532 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611F001)
+    (at 169.799 123.444)
+    (fp_text reference REF**1522 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFFD)
+    (at 168.529 123.444)
+    (fp_text reference REF**1512 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFF9)
+    (at 173.609 121.031)
+    (fp_text reference REF**1581 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFF5)
+    (at 176.149 122.174)
+    (fp_text reference REF**1571 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFF1)
+    (at 174.879 122.174)
+    (fp_text reference REF**1561 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFED)
+    (at 173.609 122.174)
+    (fp_text reference REF**1551 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFE9)
+    (at 172.339 122.174)
+    (fp_text reference REF**1541 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFE5)
+    (at 171.069 122.174)
+    (fp_text reference REF**1531 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFE1)
+    (at 169.799 122.174)
+    (fp_text reference REF**1521 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFD3)
+    (at 168.529 122.174)
+    (fp_text reference REF**1511 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFBB)
+    (at 163.957 113.03)
+    (fp_text reference REF**155 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFB7)
+    (at 161.29 115.57)
+    (fp_text reference REF**145 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFB3)
+    (at 160.02 115.57)
+    (fp_text reference REF**135 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFAF)
+    (at 158.75 115.57)
+    (fp_text reference REF**125 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFAB)
+    (at 157.48 115.57)
+    (fp_text reference REF**115 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFA7)
+    (at 163.957 114.046)
+    (fp_text reference REF**154 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EFA3)
+    (at 161.29 114.3)
+    (fp_text reference REF**144 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF9F)
+    (at 160.02 114.3)
+    (fp_text reference REF**134 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF9B)
+    (at 158.75 114.3)
+    (fp_text reference REF**124 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF97)
+    (at 157.48 114.3)
+    (fp_text reference REF**114 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF93)
+    (at 162.56 113.03)
+    (fp_text reference REF**153 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF8F)
+    (at 161.29 113.03)
+    (fp_text reference REF**143 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF8B)
+    (at 160.02 113.03)
+    (fp_text reference REF**133 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF87)
+    (at 158.75 113.03)
+    (fp_text reference REF**123 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF83)
+    (at 157.48 113.03)
+    (fp_text reference REF**113 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF7F)
+    (at 162.56 111.76)
+    (fp_text reference REF**152 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF7B)
+    (at 161.29 111.76)
+    (fp_text reference REF**142 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF77)
+    (at 160.02 111.76)
+    (fp_text reference REF**132 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF73)
+    (at 158.75 111.76)
+    (fp_text reference REF**122 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF6F)
+    (at 157.48 111.76)
+    (fp_text reference REF**112 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF6B)
+    (at 162.56 110.49)
+    (fp_text reference REF**151 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF67)
+    (at 161.29 110.49)
+    (fp_text reference REF**141 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF63)
+    (at 160.02 110.49)
+    (fp_text reference REF**131 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EF5F)
+    (at 158.75 110.49)
+    (fp_text reference REF**121 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
+  )
+
   (module Capacitors_SMD:C_1206 (layer F.Cu) (tedit 557CFA4E) (tstamp 557CF33C)
     (at 170.1165 120.2055)
     (descr "Capacitor SMD 1206, reflow soldering, AVX (see smccp.pdf)")
@@ -177,7 +1377,7 @@
     (at 154.559 130.556)
     (descr "Mounting hole, Befestigungsbohrung, 3mm, No Annular, Kein Restring,")
     (tags "Mounting hole, Befestigungsbohrung, 3mm, No Annular, Kein Restring,")
-    (fp_text reference REF** (at 0 -4.0005) (layer F.SilkS) hide
+    (fp_text reference REF**11 (at 0 -4.0005) (layer F.SilkS) hide
       (effects (font (size 0.5 0.5) (thickness 0.1)))
     )
     (fp_text value MountingHole_3mm (at 1.00076 5.00126) (layer F.Fab)
@@ -191,7 +1391,7 @@
     (at 154.559 107.696)
     (descr "Mounting hole, Befestigungsbohrung, 3mm, No Annular, Kein Restring,")
     (tags "Mounting hole, Befestigungsbohrung, 3mm, No Annular, Kein Restring,")
-    (fp_text reference REF** (at 0 -4.0005) (layer F.SilkS) hide
+    (fp_text reference REF**11 (at 0 -4.0005) (layer F.SilkS) hide
       (effects (font (size 0.5 0.5) (thickness 0.1)))
     )
     (fp_text value MountingHole_3mm (at 1.00076 5.00126) (layer F.Fab)
@@ -761,6 +1961,18 @@
     )
     (fp_circle (center 0 0) (end 3 0) (layer Cmts.User) (width 0.381))
     (pad 1 thru_hole circle (at 0 0) (size 3 3) (drill 3) (layers))
+  )
+
+  (module MotorDriver:Via (layer F.Cu) (tedit 5611EE32) (tstamp 5611EDBE)
+    (at 157.48 110.49)
+    (fp_text reference REF**111 (at 0 1) (layer F.SilkS) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text value Via (at 0 -1) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (pad 1 thru_hole circle (at 0 0) (size 0.6858 0.6858) (drill 0.3302) (layers *.Cu *.Mask F.SilkS)
+      (net 1 GND) (zone_connect 2))
   )
 
   (gr_text IN1 (at 158.75 124.714 90) (layer F.SilkS) (tstamp 56119380)
