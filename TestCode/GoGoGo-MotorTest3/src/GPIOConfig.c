@@ -36,6 +36,10 @@ void GPIOConfig_InputPin(GPIO_TypeDef *port, uint16_t pin) {
 	GPIOInitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIOInitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
 
+	if (port == GPIOC && pin == GPIO_Pin_13) {
+		GPIOInitStructure.GPIO_PuPd = GPIO_PuPd_UP;
+	}
+
 	GPIO_Init(port, &GPIOInitStructure);
 }
 
@@ -126,6 +130,12 @@ void GPIOConfig_SetInterruptPin(GPIO_TypeDef *port, uint16_t pin) {
 		if (pin == GPIO_Pin_9) {
 			SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOB, EXTI_PinSource9);
 			EXTI_InitStructure.EXTI_Line = EXTI_Line9;
+		}
+	}
+	else if (port == GPIOC) {
+		if (pin == GPIO_Pin_13) {
+			SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOC, EXTI_PinSource13);
+			EXTI_InitStructure.EXTI_Line = EXTI_Line13;
 		}
 	}
 

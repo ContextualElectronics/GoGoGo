@@ -37,9 +37,13 @@ void setup(void);
 void EXTI4_15_IRQHandler(void);
 void delay(void);
 void leftwheel (bool forward, uint16_t velocity, uint32_t steps);
+void rightwheel(bool forward, uint16_t velocity, uint32_t steps);
+
 
 uint32_t leftWheelCounter = 0;
 uint32_t rightWheelCounter = 0;
+bool isStopped = true;
+
 
 void setup(void) {
 	GPIOConfig_OutputPin(GPIOB, GPIO_Pin_5);  // Stdby
@@ -55,6 +59,9 @@ void setup(void) {
 	GPIOConfig_InputPin(GPIOB, GPIO_Pin_8);   // Decoder
 	GPIOConfig_SetPWMPin(GPIOB, GPIO_Pin_1);  // PWM
 	GPIOConfig_SetInterruptPin(GPIOB, GPIO_Pin_8); // Decoder now an interrupt!
+
+	GPIOConfig_InputPin(GPIOC, GPIO_Pin_13);  // USER Button
+	GPIOConfig_SetInterruptPin(GPIOC, GPIO_Pin_13); // Button is now an interrupt!
 }
 
 void EXTI4_15_IRQHandler(void) {
@@ -68,11 +75,16 @@ void EXTI4_15_IRQHandler(void) {
 		rightWheelCounter++;
 	}
 
+	if ((EXTI->PR & EXTI_PR_PR13) != (uint32_t)0) {
+		EXTI->PR = EXTI_PR_PR13;
+		isStopped = !isStopped;
+	}
+
 	NVIC_ClearPendingIRQ(EXTI4_15_IRQn);
 }
 
 void delay(void) {
-	uint32_t i = 12345678;
+	uint32_t i = 1234567890;
 
 	while (i > 0) {
 		i--;
@@ -80,11 +92,17 @@ void delay(void) {
 }
 
 void leftwheel(bool forward, uint16_t velocity, uint32_t steps) {
+	if (isStopped)
+		return;
+
 	GPIO_AnalogWrite(GPIOB, GPIO_Pin_4, velocity);
 
 	leftWheelCounter = 0;
 
 	while (leftWheelCounter < steps) {
+		if (isStopped)
+			break;
+
 		GPIO_DigitalWrite(GPIOB, GPIO_Pin_5, HIGH);
 
 		if (forward) {
@@ -103,11 +121,17 @@ void leftwheel(bool forward, uint16_t velocity, uint32_t steps) {
 }
 
 void rightwheel(bool forward, uint16_t velocity, uint32_t steps) {
+	if (isStopped)
+		return;
+
 	GPIO_AnalogWrite(GPIOB, GPIO_Pin_1, velocity);
 
 	rightWheelCounter = 0;
 
 	while (rightWheelCounter < steps) {
+		if (isStopped)
+			break;
+
 		GPIO_DigitalWrite(GPIOB, GPIO_Pin_15, HIGH);
 
 		if (forward) {
@@ -131,7 +155,7 @@ int main(int argc, char* argv[]) {
 	while (1) {
 		leftwheel(true, 50, 100);
 		rightwheel(true, 50, 100);
-		exit(0);
+		delay();
 	}
 }
 
