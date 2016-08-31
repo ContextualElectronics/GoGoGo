@@ -84,6 +84,19 @@ void GPIOConfig_SetPWMPin(GPIO_TypeDef *port, uint16_t pin) {
 			//TIM_CtrlPWMOutputs(TIM3, ENABLE);
 			//TIM3->BDTR |= TIM_BDTR_MOE;
 		}
+
+		if (pin == GPIO_Pin_1) {
+			RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM14, ENABLE);
+
+			GPIO_PinAFConfig(port, GPIO_PinSource1, GPIO_AF_0);
+			TIM_TimeBaseInit(TIM14, &TIM_TimeBaseStructure);
+			TIM_Cmd(TIM14, ENABLE);
+
+			TIM_OC1Init(TIM14, &TIM_OCInitStructure);
+
+			TIM_OC1PreloadConfig(TIM14, TIM_OCPreload_Enable);
+			TIM_SelectOnePulseMode(TIM14, TIM_OPMode_Repetitive);
+		}
 	}
 }
 
@@ -96,8 +109,23 @@ void GPIOConfig_SetInterruptPin(GPIO_TypeDef *port, uint16_t pin) {
 	if (port == GPIOA) {
 		if (pin == GPIO_Pin_10) {
 			SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource10);
-
 			EXTI_InitStructure.EXTI_Line = EXTI_Line10;
+		}
+
+		if (pin == GPIO_Pin_9) {
+			SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource9);
+			EXTI_InitStructure.EXTI_Line = EXTI_Line9;
+		}
+	}
+	else if (port == GPIOB) {
+		if (pin == GPIO_Pin_8) {
+			SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOB, EXTI_PinSource8);
+			EXTI_InitStructure.EXTI_Line = EXTI_Line8;
+		}
+
+		if (pin == GPIO_Pin_9) {
+			SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOB, EXTI_PinSource9);
+			EXTI_InitStructure.EXTI_Line = EXTI_Line9;
 		}
 	}
 

@@ -23,5 +23,9 @@ void GPIO_AnalogWrite(GPIO_TypeDef *port, uint16_t pin, uint16_t value) {
 		if (pin == GPIO_Pin_4) {
 			TIM3->CCR1 = ChannelPulse;
 		}
+
+		if (pin == GPIO_Pin_1) {
+			TIM14->CCR1 = ChannelPulse;
+		}
 	}
 }

@@ -16,34 +16,59 @@
 #pragma GCC diagnostic ignored "-Wreturn-type"
 
 // Arduino UNO uses Pins 0, 2, 5, 6, 8
+
+// Left Wheel Pins
 // 4 = Stdby   = PB5
-// 2 = Decoder = PA10
+// 2 = Decoder = PB9
 // 5 = PWM     = PB4
 // 6 = In1     = PB10
-// 8 = In2     = PA9
+// 8 = In2     = PB3
+
+// Right Wheel Pins
+//  = Stby     = PB15
+//  = Decoder  = PB8
+//  = PWM      = PB1
+//  = In1      = PB14
+//  = In2      = PB13
+
+// USER BUTTON = PC13
 
 void setup(void);
 void EXTI4_15_IRQHandler(void);
 void delay(void);
 void leftwheel (bool forward, uint16_t velocity, uint32_t steps);
 
-uint32_t counter = 0;
+uint32_t leftWheelCounter = 0;
+uint32_t rightWheelCounter = 0;
 
 void setup(void) {
 	GPIOConfig_OutputPin(GPIOB, GPIO_Pin_5);  // Stdby
 	GPIOConfig_OutputPin(GPIOB, GPIO_Pin_10); // In1
-	GPIOConfig_OutputPin(GPIOA, GPIO_Pin_9);  // In2
-	GPIOConfig_InputPin(GPIOA, GPIO_Pin_10);  // Decoder
+	GPIOConfig_OutputPin(GPIOB, GPIO_Pin_3);  // In2
+	GPIOConfig_InputPin(GPIOB, GPIO_Pin_9);  // Decoder
 	GPIOConfig_SetPWMPin(GPIOB, GPIO_Pin_4);  // PWM
-	GPIOConfig_SetInterruptPin(GPIOA, GPIO_Pin_10); // Decoder now an interrupt!
+	GPIOConfig_SetInterruptPin(GPIOB, GPIO_Pin_9); // Decoder now an interrupt!
+
+	GPIOConfig_OutputPin(GPIOB, GPIO_Pin_15); // Stdby
+	GPIOConfig_OutputPin(GPIOB, GPIO_Pin_14); // In1
+	GPIOConfig_OutputPin(GPIOB, GPIO_Pin_13); // In2
+	GPIOConfig_InputPin(GPIOB, GPIO_Pin_8);   // Decoder
+	GPIOConfig_SetPWMPin(GPIOB, GPIO_Pin_1);  // PWM
+	GPIOConfig_SetInterruptPin(GPIOB, GPIO_Pin_8); // Decoder now an interrupt!
 }
 
 void EXTI4_15_IRQHandler(void) {
-	if ((EXTI->PR & EXTI_PR_PR10) != (uint32_t)0) {
-		EXTI->PR = EXTI_PR_PR10;
-		counter++;
-		NVIC_ClearPendingIRQ(EXTI4_15_IRQn);
+	if ((EXTI->PR & EXTI_PR_PR9) != (uint32_t)0) {
+		EXTI->PR = EXTI_PR_PR9;
+		leftWheelCounter++;
 	}
+
+	if ((EXTI->PR & EXTI_PR_PR8) != (uint32_t)0) {
+		EXTI->PR = EXTI_PR_PR8;
+		rightWheelCounter++;
+	}
+
+	NVIC_ClearPendingIRQ(EXTI4_15_IRQn);
 }
 
 void delay(void) {
@@ -53,27 +78,51 @@ void delay(void) {
 		i--;
 	}
 }
-void leftwheel (bool forward, uint16_t velocity, uint32_t steps) {
+
+void leftwheel(bool forward, uint16_t velocity, uint32_t steps) {
 	GPIO_AnalogWrite(GPIOB, GPIO_Pin_4, velocity);
 
-	counter = 0;
+	leftWheelCounter = 0;
 
-	while (counter < steps) {
+	while (leftWheelCounter < steps) {
 		GPIO_DigitalWrite(GPIOB, GPIO_Pin_5, HIGH);
 
 		if (forward) {
 			GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, HIGH);
-			GPIO_DigitalWrite(GPIOA, GPIO_Pin_9, LOW);
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, LOW);
 		}
 		else {
 			GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, LOW);
-			GPIO_DigitalWrite(GPIOA, GPIO_Pin_9, HIGH);
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, HIGH);
 		}
 	}
 
 	GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, HIGH);
-	GPIO_DigitalWrite(GPIOA, GPIO_Pin_9, HIGH);
+	GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, HIGH);
 	GPIO_DigitalWrite(GPIOB, GPIO_Pin_5, LOW);
+}
+
+void rightwheel(bool forward, uint16_t velocity, uint32_t steps) {
+	GPIO_AnalogWrite(GPIOB, GPIO_Pin_1, velocity);
+
+	rightWheelCounter = 0;
+
+	while (rightWheelCounter < steps) {
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_15, HIGH);
+
+		if (forward) {
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, LOW);
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, HIGH);
+		}
+		else {
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, HIGH);
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, LOW);
+		}
+	}
+
+	GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, HIGH);
+	GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, HIGH);
+	GPIO_DigitalWrite(GPIOB, GPIO_Pin_15, LOW);
 }
 
 int main(int argc, char* argv[]) {
@@ -81,9 +130,8 @@ int main(int argc, char* argv[]) {
 
 	while (1) {
 		leftwheel(true, 50, 100);
-		delay();
-		leftwheel(false, 100, 20);
-		delay();
+		rightwheel(true, 50, 100);
+		exit(0);
 	}
 }
 
