@@ -84,9 +84,6 @@ void GPIOConfig_SetPWMPin(GPIO_TypeDef *port, uint16_t pin) {
 
 			TIM_OC1PreloadConfig(TIM3, TIM_OCPreload_Enable);
 			TIM_SelectOnePulseMode(TIM3, TIM_OPMode_Repetitive);
-
-			//TIM_CtrlPWMOutputs(TIM3, ENABLE);
-			//TIM3->BDTR |= TIM_BDTR_MOE;
 		}
 
 		if (pin == GPIO_Pin_1) {
