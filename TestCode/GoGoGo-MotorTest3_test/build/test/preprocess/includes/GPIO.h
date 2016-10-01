@@ -1,2 +1,0 @@
----
-- cmsis_device.h
