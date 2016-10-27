@@ -2,9 +2,9 @@
 #include "Wheel.h"
 
 
-static volatile uint32_t leftWheelCounter = 0;
-static volatile uint32_t rightWheelCounter = 0;
-static volatile bool isStopped = true;
+volatile uint32_t leftWheelCounter = 0;
+volatile uint32_t rightWheelCounter = 0;
+volatile bool isStopped = true;
 
 static void LeftWheel_Init(void);
 static void RightWheel_Init(void);
@@ -46,6 +46,37 @@ void EXTI4_15_IRQHandler(void) {
 	}
 
 	NVIC_ClearPendingIRQ(EXTI4_15_IRQn);
+}
+
+void Wheel_Straight(bool forward, uint16_t velocity, uint32_t steps) {
+
+	GPIO_AnalogWrite(GPIOB, GPIO_Pin_4, velocity); // LeftWheel Velocity
+	GPIO_AnalogWrite(GPIOB, GPIO_Pin_1, velocity); // RightWheel Velocity
+
+	GPIO_DigitalWrite(GPIOB, GPIO_Pin_5, HIGH); // LeftWheel Enabled
+	GPIO_DigitalWrite(GPIOB, GPIO_Pin_15, HIGH); // RightWheel Enabled
+
+	if (forward) {
+		// LeftWheel
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, HIGH);
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, LOW);
+
+		// RightWheel
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, LOW);
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, HIGH);
+	}
+	else {
+		// LeftWheel
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, LOW);
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, HIGH);
+
+		// RightWheel
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, HIGH);
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, LOW);
+	}
+
+	LeftWheel_Init();
+	RightWheel_Init();
 }
 
 void Wheel_TurnLeftwheel(bool forward, uint16_t velocity, uint32_t steps) {
