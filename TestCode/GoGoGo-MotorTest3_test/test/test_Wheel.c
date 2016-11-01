@@ -1,19 +1,38 @@
 #include "unity.h"
+#include "fff.h"
 #include "Wheel.h"
 #include <stdbool.h>
+#include <stdint.h>
 
 #include "mock_GPIO.h"
 #include "mock_GPIOConfig.h"
+#include "mock_WheelEncoder.h"
+
 #include "cmsis_device.h"
 
 
-void test_whenWheelsAreInitialized_thenWeSetTheCorrectPins() {
-	Wheel_Initialize();
+void setUp(void) {
 
-	TEST_ASSERT_TRUE(0 < GPIOConfig_OutputPin_fake.call_count);
+    RESET_FAKE(WheelEncoder_IsStepping);
+    RESET_FAKE(WheelEncoder_GetIsStopped);
+    RESET_FAKE(WheelEncoder_SetIsStopped);
+}
+ 
+void tearDown(void) {
+
+}
+
+void test_whenWheelsAreInitialized_thenWeSetTheCorrectPins() {
+    Wheel_Initialize();
+
+    TEST_ASSERT_TRUE(0 < GPIOConfig_OutputPin_fake.call_count);
 }
 
 void test_whenWheelsGoForward_thenWeSetTheCorrectDirectionPinsForLeftWheel() {
+    bool counterReturnValues[2] = {true,false};
+    SET_RETURN_SEQ(WheelEncoder_IsStepping, counterReturnValues, 2);
+
+
     Wheel_Straight(true, 100, 6);
 
     //GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, HIGH);
@@ -50,6 +69,10 @@ void test_whenWheelsGoForward_thenWeSetTheVelocityOfTheLeftWheel() {
 }
 
 void test_whenWheelsGoForward_thenWeSetTheCorrectDirectionPinsForRightWheel() {
+    bool counterReturnValues[2] = {true,false};
+    SET_RETURN_SEQ(WheelEncoder_IsStepping, counterReturnValues, 2);
+
+
     Wheel_Straight(true, 100, 6);
 
     //GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, LOW);
@@ -85,6 +108,10 @@ void test_whenWheelsGoForward_thenWeSetTheVelocityOfTheRightWheel() {
 }
 
 void test_whenWheelsGoBackward_thenWeSetTheCorrectDirectionPinsForLeftWheel() {
+    bool counterReturnValues[2] = {true,false};
+    SET_RETURN_SEQ(WheelEncoder_IsStepping, counterReturnValues, 2);
+
+
     Wheel_Straight(false, 100, 6);
 
     //GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, LOW);
@@ -100,6 +127,10 @@ void test_whenWheelsGoBackward_thenWeSetTheCorrectDirectionPinsForLeftWheel() {
 }
 
 void test_whenWheelsGoBackward_thenWeSetTheCorrectDirectionPinsForRightWheel() {
+    bool counterReturnValues[2] = {true,false};
+    SET_RETURN_SEQ(WheelEncoder_IsStepping, counterReturnValues, 2);
+
+
     Wheel_Straight(false, 100, 6);
 
     //GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, HIGH);
@@ -115,6 +146,28 @@ void test_whenWheelsGoBackward_thenWeSetTheCorrectDirectionPinsForRightWheel() {
 }
 
 void test_whenWheelsGoStraight_thenWeInitializeTheWheelStepCounter() {
+    Wheel_Straight(true, 100, 6);
+
+    TEST_ASSERT_TRUE(0 == WheelEncoder_SetLeftWheelCounter_fake.arg0_history[0]); 
+}
+
+void test_WhenWheelsGoStraight_thenWeExitIfIsStopped() {
+    WheelEncoder_GetIsStopped_fake.return_val = true;    
+
+    Wheel_Straight(true, 100, 6);
+
+    // GPIO_AnalogWrite(GPIOB, GPIO_Pin_4, velocity) not called!!
+
+    TEST_ASSERT_TRUE(0 == GPIO_AnalogWrite_fake.call_count); 
+}
+
+void test_WhenWheelsGoStraight_thenWeExitIfIsStoppedInStepLoop() {
+    bool expectedReturnValues[2] = {false,true};
+    SET_RETURN_SEQ(WheelEncoder_GetIsStopped, expectedReturnValues, 2);
+    WheelEncoder_IsStepping_fake.return_val = true;
+
+    Wheel_Straight(true, 100, 6);
     
+    TEST_ASSERT_EQUAL_UINT(8, GPIO_DigitalWrite_fake.call_count);
 }
 

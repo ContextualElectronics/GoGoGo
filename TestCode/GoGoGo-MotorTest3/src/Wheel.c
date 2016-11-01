@@ -1,10 +1,7 @@
 
 #include "Wheel.h"
+#include "WheelEncoder.h"
 
-
-volatile uint32_t leftWheelCounter = 0;
-volatile uint32_t rightWheelCounter = 0;
-volatile bool isStopped = true;
 
 static void LeftWheel_Init(void);
 static void RightWheel_Init(void);
@@ -32,23 +29,25 @@ void Wheel_Initialize(void) {
 void EXTI4_15_IRQHandler(void) {
 	if ((EXTI->PR & EXTI_PR_PR9) != (uint32_t)0) {
 		EXTI->PR = EXTI_PR_PR9;
-		leftWheelCounter++;
+		WheelEncoder_SetLeftWheelCounter(WheelEncoder_GetLeftWheelCounter()+1);
 	}
 
 	if ((EXTI->PR & EXTI_PR_PR8) != (uint32_t)0) {
 		EXTI->PR = EXTI_PR_PR8;
-		rightWheelCounter++;
+		WheelEncoder_SetRightWheelCounter(WheelEncoder_GetRightWheelCounter()+1);
 	}
 
 	if ((EXTI->PR & EXTI_PR_PR13) != (uint32_t)0) {
 		EXTI->PR = EXTI_PR_PR13;
-		isStopped = !isStopped;
+		WheelEncoder_SetIsStopped(!WheelEncoder_GetIsStopped());
 	}
 
 	NVIC_ClearPendingIRQ(EXTI4_15_IRQn);
 }
 
 void Wheel_Straight(bool forward, uint16_t velocity, uint32_t steps) {
+	if (WheelEncoder_GetIsStopped())
+		return;
 
 	GPIO_AnalogWrite(GPIOB, GPIO_Pin_4, velocity); // LeftWheel Velocity
 	GPIO_AnalogWrite(GPIOB, GPIO_Pin_1, velocity); // RightWheel Velocity
@@ -56,23 +55,30 @@ void Wheel_Straight(bool forward, uint16_t velocity, uint32_t steps) {
 	GPIO_DigitalWrite(GPIOB, GPIO_Pin_5, HIGH); // LeftWheel Enabled
 	GPIO_DigitalWrite(GPIOB, GPIO_Pin_15, HIGH); // RightWheel Enabled
 
-	if (forward) {
-		// LeftWheel
-		GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, HIGH);
-		GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, LOW);
+	WheelEncoder_SetLeftWheelCounter(0);
 
-		// RightWheel
-		GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, LOW);
-		GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, HIGH);
-	}
-	else {
-		// LeftWheel
-		GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, LOW);
-		GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, HIGH);
+	while (WheelEncoder_IsStepping(WheelEncoder_GetLeftWheelCounter(), steps)) {
+		if (WheelEncoder_GetIsStopped())
+			break;
 
-		// RightWheel
-		GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, HIGH);
-		GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, LOW);
+		if (forward) {
+			// LeftWheel
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, HIGH);
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, LOW);
+
+			// RightWheel
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, LOW);
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, HIGH);
+		}
+		else {
+			// LeftWheel
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, LOW);
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, HIGH);
+
+			// RightWheel
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, HIGH);
+			GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, LOW);
+		}
 	}
 
 	LeftWheel_Init();
@@ -80,15 +86,15 @@ void Wheel_Straight(bool forward, uint16_t velocity, uint32_t steps) {
 }
 
 void Wheel_TurnLeftwheel(bool forward, uint16_t velocity, uint32_t steps) {
-	if (isStopped)
+	if (WheelEncoder_GetIsStopped())
 		return;
 
 	GPIO_AnalogWrite(GPIOB, GPIO_Pin_4, velocity);
 
-	leftWheelCounter = 0;
+	WheelEncoder_SetLeftWheelCounter(0);
 
-	while (leftWheelCounter < steps) {
-		if (isStopped)
+	while (WheelEncoder_IsStepping(WheelEncoder_GetLeftWheelCounter(), steps)) {
+		if (WheelEncoder_GetIsStopped())
 			break;
 
 		GPIO_DigitalWrite(GPIOB, GPIO_Pin_5, HIGH);
@@ -107,15 +113,15 @@ void Wheel_TurnLeftwheel(bool forward, uint16_t velocity, uint32_t steps) {
 }
 
 void Wheel_TurnRightwheel(bool forward, uint16_t velocity, uint32_t steps) {
-	if (isStopped)
+	if (WheelEncoder_GetIsStopped())
 		return;
 
 	GPIO_AnalogWrite(GPIOB, GPIO_Pin_1, velocity);
 
-	rightWheelCounter = 0;
+	WheelEncoder_SetRightWheelCounter(0);
 
-	while (rightWheelCounter < steps) {
-		if (isStopped)
+	while (WheelEncoder_IsStepping(WheelEncoder_GetRightWheelCounter(), steps)) {
+		if (WheelEncoder_GetIsStopped())
 			break;
 
 		GPIO_DigitalWrite(GPIOB, GPIO_Pin_15, HIGH);
