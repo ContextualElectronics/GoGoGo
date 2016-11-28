@@ -28,9 +28,11 @@
 // USER BUTTON = PC13
 
 void Wheel_Initalize(void);
-void Wheel_Straight(bool forward, uint16_t velocity, uint32_t steps);
-void Wheel_TurnLeftwheel(bool forward, uint16_t velocity, uint32_t steps);
-void Wheel_TurnRightwheel(bool forward, uint16_t velocity, uint32_t steps);
+void Wheel_StopLeftWheel(void);
+void Wheel_StopRightWheel(void);
+void Wheel_Straight(bool forward, uint16_t velocity);
+void Wheel_TurnLeftWheel(bool forward, uint16_t velocity);
+void Wheel_TurnRightWheel(bool forward, uint16_t velocity);
 
 void EXTI4_15_IRQHandler(void);
 

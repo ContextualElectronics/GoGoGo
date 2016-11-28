@@ -1,10 +1,6 @@
-
 #include "Wheel.h"
 #include "WheelEncoder.h"
 
-
-static void LeftWheel_Init(void);
-static void RightWheel_Init(void);
 
 
 void Wheel_Initialize(void) {
@@ -45,108 +41,63 @@ void EXTI4_15_IRQHandler(void) {
 	NVIC_ClearPendingIRQ(EXTI4_15_IRQn);
 }
 
-void Wheel_Straight(bool forward, uint16_t velocity, uint32_t steps) {
-	if (WheelEncoder_GetIsStopped())
+void Wheel_Straight(bool forward, uint16_t velocity) {
+	if (WheelEncoder_GetIsStopped()) {
+		Wheel_StopLeftWheel();
+		Wheel_StopRightWheel();
 		return;
-
-	GPIO_AnalogWrite(GPIOB, GPIO_Pin_4, velocity); // LeftWheel Velocity
-	GPIO_AnalogWrite(GPIOB, GPIO_Pin_1, velocity); // RightWheel Velocity
-
-	GPIO_DigitalWrite(GPIOB, GPIO_Pin_5, HIGH); // LeftWheel Enabled
-	GPIO_DigitalWrite(GPIOB, GPIO_Pin_15, HIGH); // RightWheel Enabled
-
-	WheelEncoder_SetLeftWheelCounter(0);
-
-	while (WheelEncoder_IsStepping(WheelEncoder_GetLeftWheelCounter(), steps)) {
-		if (WheelEncoder_GetIsStopped())
-			break;
-
-		if (forward) {
-			// LeftWheel
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, HIGH);
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, LOW);
-
-			// RightWheel
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, LOW);
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, HIGH);
-		}
-		else {
-			// LeftWheel
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, LOW);
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, HIGH);
-
-			// RightWheel
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, HIGH);
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, LOW);
-		}
 	}
 
-	LeftWheel_Init();
-	RightWheel_Init();
+	Wheel_TurnLeftWheel(forward, velocity);
+	Wheel_TurnRightWheel(forward, velocity);
 }
 
-void Wheel_TurnLeftwheel(bool forward, uint16_t velocity, uint32_t steps) {
-	if (WheelEncoder_GetIsStopped())
+void Wheel_TurnLeftWheel(bool forward, uint16_t velocity) {
+	if (WheelEncoder_GetIsStopped()) {
+		Wheel_StopLeftWheel();
 		return;
+	}
 
 	GPIO_AnalogWrite(GPIOB, GPIO_Pin_4, velocity);
+	GPIO_DigitalWrite(GPIOB, GPIO_Pin_5, HIGH);
 
-	WheelEncoder_SetLeftWheelCounter(0);
-
-	while (WheelEncoder_IsStepping(WheelEncoder_GetLeftWheelCounter(), steps)) {
-		if (WheelEncoder_GetIsStopped())
-			break;
-
-		GPIO_DigitalWrite(GPIOB, GPIO_Pin_5, HIGH);
-
-		if (forward) {
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, HIGH);
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, LOW);
-		}
-		else {
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, LOW);
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, HIGH);
-		}
+	if (forward) {
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, HIGH);
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, LOW);
 	}
-
-	LeftWheel_Init();
+	else {
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, LOW);
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, HIGH);
+	}
 }
 
-void Wheel_TurnRightwheel(bool forward, uint16_t velocity, uint32_t steps) {
-	if (WheelEncoder_GetIsStopped())
+void Wheel_TurnRightWheel(bool forward, uint16_t velocity) {
+	if (WheelEncoder_GetIsStopped()) {
+		Wheel_StopRightWheel();
 		return;
+	}
 
 	GPIO_AnalogWrite(GPIOB, GPIO_Pin_1, velocity);
+	GPIO_DigitalWrite(GPIOB, GPIO_Pin_15, HIGH);
 
-	WheelEncoder_SetRightWheelCounter(0);
-
-	while (WheelEncoder_IsStepping(WheelEncoder_GetRightWheelCounter(), steps)) {
-		if (WheelEncoder_GetIsStopped())
-			break;
-
-		GPIO_DigitalWrite(GPIOB, GPIO_Pin_15, HIGH);
-
-		if (forward) {
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, LOW);
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, HIGH);
-		}
-		else {
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, HIGH);
-			GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, LOW);
-		}
+	if (forward) {
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, LOW);
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, HIGH);
 	}
-
-	RightWheel_Init();
+	else {
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, HIGH);
+		GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, LOW);
+	}
 }
 
-static void LeftWheel_Init(void) {
+void Wheel_StopLeftWheel(void) {
 	GPIO_AnalogWrite(GPIOB, GPIO_Pin_4, 0);
 	GPIO_DigitalWrite(GPIOB, GPIO_Pin_10, LOW);
 	GPIO_DigitalWrite(GPIOB, GPIO_Pin_3, LOW);
 	GPIO_DigitalWrite(GPIOB, GPIO_Pin_5, LOW);
 }
 
-static void RightWheel_Init(void) {
+void Wheel_StopRightWheel(void) {
 	GPIO_AnalogWrite(GPIOB, GPIO_Pin_1, 0);
 	GPIO_DigitalWrite(GPIOB, GPIO_Pin_14, LOW);
 	GPIO_DigitalWrite(GPIOB, GPIO_Pin_13, LOW);
