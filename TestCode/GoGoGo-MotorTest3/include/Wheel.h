@@ -27,7 +27,7 @@
 
 // USER BUTTON = PC13
 
-void Wheel_Initalize(void);
+void Wheel_Initialize(void);
 void Wheel_StopLeftWheel(void);
 void Wheel_StopRightWheel(void);
 void Wheel_Straight(bool forward, uint16_t velocity);
