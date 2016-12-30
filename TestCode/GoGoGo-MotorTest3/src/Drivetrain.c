@@ -16,6 +16,7 @@ int8_t Drivetrain_GetVelocity(void) {
 }
 
 void Drivetrain_Initialize(void) {
+	Wheel_Initialize();
 	Wheel_StopLeftWheel();
 	Wheel_StopRightWheel();
 }

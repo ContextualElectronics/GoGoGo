@@ -2,10 +2,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
+
 #include "diag/Trace.h"
 
-#include "Wheel.h"
+#include "Drivetrain.h"
+#include "WheelTest.h"
+#include "DelayTimer.h"
 
 
 #pragma GCC diagnostic push
@@ -14,27 +16,15 @@
 #pragma GCC diagnostic ignored "-Wreturn-type"
 
 
-
-void delay(void);
-
-
-void delay(void) {
-	uint32_t i = 1234567890;
-
-	while (i > 0) {
-		i--;
-	}
-}
-
 int main(int argc, char* argv[]) {
-	Wheel_Initialize();
+	DelayTimer_Init();
+	Drivetrain_Initialize();
 
 	while (1) {
-		Wheel_TurnLeftWheel(true, 50);
-		Wheel_TurnRightWheel(true, 50);
-		delay();
+		WheelTest_FigureEight();
+		DelayTimer_Sleep(TIMER_FREQUENCY_HZ * 4); // 4 second sleep
+
+		WheelTest_SmallCircle();
+		DelayTimer_Sleep(TIMER_FREQUENCY_HZ * 4); // 4 second sleep
 	}
 }
-
-#pragma GCC diagnostic pop
-
